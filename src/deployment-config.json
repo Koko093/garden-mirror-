@@ -1,0 +1,183 @@
+{
+  "project": {
+    "name": "Garden Mirror",
+    "version": "1.0.0",
+    "description": "Professional Event Management and Reservation System",
+    "architecture": "MERN Stack (MongoDB + Express.js + React + Node.js)",
+    "payments": "PayMongo Integration",
+    "authentication": "JWT + OTP Verification"
+  },
+  "deployment": {
+    "status": "READY",
+    "lastChecked": "2024-12-20",
+    "requirements": {
+      "node": ">=16.0.0",
+      "npm": ">=8.0.0",
+      "mongodb": ">=5.0.0"
+    }
+  },
+  "backend": {
+    "port": 5000,
+    "framework": "Express.js",
+    "database": "MongoDB with Mongoose",
+    "authentication": "JWT + Sessions",
+    "requiredEnvVars": [
+      "NODE_ENV",
+      "MONGODB_URI",
+      "JWT_SECRET",
+      "SESSION_SECRET",
+      "PAYMONGO_SECRET_KEY",
+      "PAYMONGO_PUBLIC_KEY",
+      "PAYMONGO_WEBHOOK_SECRET",
+      "FRONTEND_URL"
+    ],
+    "routes": [
+      "/api/auth",
+      "/api/users",
+      "/api/admin",
+      "/api/reservations",
+      "/api/payments",
+      "/api/packages",
+      "/api/rooms",
+      "/api/feedback",
+      "/api/events",
+      "/api/chatbot",
+      "/api/files"
+    ],
+    "features": [
+      "User Registration with OTP",
+      "User & Admin Authentication",
+      "Reservation Management",
+      "PayMongo Payment Processing",
+      "File Upload Handling",
+      "Feedback System",
+      "ChatBot API"
+    ]
+  },
+  "frontend": {
+    "port": 3000,
+    "framework": "React with TypeScript",
+    "styling": "Tailwind CSS v4",
+    "components": "Shadcn/ui",
+    "requiredEnvVars": [
+      "REACT_APP_API_URL",
+      "REACT_APP_PAYMONGO_PUBLIC_KEY"
+    ],
+    "pages": [
+      "Home",
+      "About",
+      "Packages",
+      "Gallery",
+      "Contact",
+      "Feedback",
+      "Reservation System",
+      "User Profile",
+      "Login/Register",
+      "Admin Dashboard"
+    ],
+    "features": [
+      "Responsive Design",
+      "PayMongo Payment Integration",
+      "OTP Verification UI",
+      "Real-time Reservation System",
+      "Admin Panel",
+      "ChatBot Interface"
+    ]
+  },
+  "database": {
+    "type": "MongoDB",
+    "models": [
+      "User",
+      "Admin",
+      "Reservation",
+      "Room",
+      "Package",
+      "Feedback"
+    ],
+    "features": [
+      "User Management",
+      "Reservation Tracking",
+      "Payment History",
+      "Admin Activity Logs",
+      "Room & Package Management"
+    ]
+  },
+  "integrations": {
+    "paymongo": {
+      "status": "INTEGRATED",
+      "features": [
+        "Credit Card Payments",
+        "E-Wallet Support",
+        "Webhook Processing",
+        "Down Payment System",
+        "Balance Payment System"
+      ],
+      "webhookUrl": "/api/payments/webhook"
+    },
+    "otp": {
+      "status": "IMPLEMENTED",
+      "type": "Session-based",
+      "expiry": "5 minutes",
+      "features": [
+        "Email Verification",
+        "Registration Security",
+        "Resend Functionality"
+      ]
+    }
+  },
+  "deployment_platforms": {
+    "backend_recommended": [
+      "Railway",
+      "Render",
+      "Heroku",
+      "DigitalOcean App Platform"
+    ],
+    "frontend_recommended": [
+      "Vercel",
+      "Netlify",
+      "AWS Amplify"
+    ],
+    "database_recommended": [
+      "MongoDB Atlas",
+      "Self-hosted MongoDB"
+    ]
+  },
+  "security": {
+    "features": [
+      "JWT Authentication",
+      "Password Hashing (bcrypt)",
+      "Rate Limiting",
+      "CORS Protection",
+      "Helmet Security Headers",
+      "Input Validation",
+      "Session Management",
+      "Environment Variable Protection"
+    ]
+  },
+  "testing": {
+    "health_endpoints": [
+      "GET /api/health (Backend)"
+    ],
+    "test_flows": [
+      "User Registration + OTP",
+      "User Login",
+      "Admin Login",
+      "Create Reservation",
+      "PayMongo Payment",
+      "Admin Dashboard Access"
+    ]
+  },
+  "documentation": {
+    "files": [
+      "README.md",
+      "DEPLOYMENT_CHECKLIST.md",
+      "MONGODB_SETUP.md",
+      "SETUP.md"
+    ]
+  },
+  "support": {
+    "logs": "Backend console logs + MongoDB logs",
+    "monitoring": "Health check endpoints",
+    "debugging": "Development mode error details"
+  }
+}
